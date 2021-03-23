@@ -1,30 +1,32 @@
 package com.jacobarchambault.chapter18lab1;
 
-import java.awt.Font;
-import java.awt.Color;
 import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.FileNotFoundException;
-import javax.swing.JFrame;
+
+import javax.swing.Box;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JTextField;
-import javax.swing.JFileChooser;
 import javax.swing.JColorChooser;
-import javax.swing.JTextArea;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.ImageIcon;
-import javax.swing.Box;
-import javax.swing.JOptionPane;
-import javax.swing.JLabel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.WindowConstants;
 
 /* Display file in a text area. File is chosen from a dialog box. The JFileChooser class will be demonstrated. */
 public class Ch18Lab1 extends JFrame {
@@ -32,51 +34,36 @@ public class Ch18Lab1 extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private JButton jbtBrowse;
-	// Text field to receive file name
-	private JTextField jtfFile;
-	// Text area to display file
-	private JTextArea jtaFileContent;
-	// Create jFileChooser
-	private JFileChooser jFileChooser;
-	// Create panel
-	private JPanel p;
-	// ScrollPane
-	private JScrollPane jsp;
-	// Create Menu
-	private JMenuBar menuBar;
-	private JMenu fileMenu;
-	private JMenu helpMenu;
-	private JMenu editMenu;
-	private JMenu colorMenu;
-	private JMenuItem openMenu;
-	private JMenuItem exitMenu;
-	private JMenuItem selectAllMenu;
-	private JMenu chooseColor;
-	private JMenuItem setBackgroundMenu;
-	private JMenuItem setForegroundMenu;
 	private JMenuItem aboutMenu;
+	private JMenu chooseColor;
+	private JMenu colorMenu;
+	private JMenu editMenu;
+	private JMenuItem exitMenu;
+	private JMenu fileMenu;
 	// Create a Font object
 	private Font font = new Font(
 			"Helvetica",
 			Font.BOLD,
 			16);
+	private JMenu helpMenu;
+	private JButton jbtBrowse;
+	// Create jFileChooser
+	private JFileChooser jFileChooser;
+	// ScrollPane
+	private JScrollPane jsp;
+	// Text area to display file
+	private JTextArea jtaFileContent;
+	// Text field to receive file name
+	private JTextField jtfFile;
+	// Create Menu
+	private JMenuBar menuBar;
+	private JMenuItem openMenu;
+	// Create panel
+	private JPanel p;
+	private JMenuItem selectAllMenu;
+	private JMenuItem setBackgroundMenu;
 
-	public static void main(
-			String[] args) {
-		Ch18Lab1 frame = new Ch18Lab1();
-		frame.setSize(
-				400,
-				300);
-		frame.setTitle(
-				"Chapter 18 Lab1");
-		frame.setDefaultCloseOperation(
-				JFrame.EXIT_ON_CLOSE);
-		frame.setLocationRelativeTo(
-				null); // Center the frame
-		frame.setVisible(
-				true);
-	}
+	private JMenuItem setForegroundMenu;
 
 	public Ch18Lab1() {
 		createMenu();
@@ -133,6 +120,7 @@ public class Ch18Lab1 extends JFrame {
 				"Open File");
 		openMenu.addActionListener(
 				new ActionListener() {
+					@Override
 					public void actionPerformed(
 							ActionEvent e) {
 						browse();
@@ -145,6 +133,7 @@ public class Ch18Lab1 extends JFrame {
 				"Exit Program");
 		exitMenu.addActionListener(
 				new ActionListener() {
+					@Override
 					public void actionPerformed(
 							ActionEvent e) {
 						System.exit(
@@ -158,6 +147,7 @@ public class Ch18Lab1 extends JFrame {
 				"Select All");
 		selectAllMenu.addActionListener(
 				new ActionListener() {
+					@Override
 					public void actionPerformed(
 							ActionEvent e) {
 						jtaFileContent.selectAll();
@@ -174,6 +164,7 @@ public class Ch18Lab1 extends JFrame {
 				"Set Background Color");
 		setBackgroundMenu.addActionListener(
 				new ActionListener() {
+					@Override
 					public void actionPerformed(
 							ActionEvent e) {
 						Color selectedColor = JColorChooser.showDialog(
@@ -192,6 +183,7 @@ public class Ch18Lab1 extends JFrame {
 				"Set Text Color");
 		setForegroundMenu.addActionListener(
 				new ActionListener() {
+					@Override
 					public void actionPerformed(
 							ActionEvent e) {
 						Color selectedColor = JColorChooser.showDialog(
@@ -210,6 +202,7 @@ public class Ch18Lab1 extends JFrame {
 				"About Program");
 		aboutMenu.addActionListener(
 				new ActionListener() {
+					@Override
 					public void actionPerformed(
 							ActionEvent e) {
 						JOptionPane.showMessageDialog(
@@ -278,6 +271,7 @@ public class Ch18Lab1 extends JFrame {
 				Color.black);
 		jtfFile.addActionListener(
 				new ActionListener() {
+					@Override
 					public void actionPerformed(
 							ActionEvent e) {
 						showFile(
@@ -291,6 +285,7 @@ public class Ch18Lab1 extends JFrame {
 				"Browse");
 		jbtBrowse.addActionListener(
 				new ActionListener() {
+					@Override
 					public void actionPerformed(
 							ActionEvent e) {
 						browse();

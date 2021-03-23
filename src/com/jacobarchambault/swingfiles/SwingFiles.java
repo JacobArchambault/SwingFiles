@@ -1,4 +1,4 @@
-package com.jacobarchambault.chapter18lab1;
+package com.jacobarchambault.swingfiles;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -29,7 +29,7 @@ import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
 /* Display file in a text area. File is chosen from a dialog box. The JFileChooser class will be demonstrated. */
-public class Ch18Lab1 extends JFrame {
+public class SwingFiles extends JFrame {
 	/**
 	 * 
 	 */
@@ -65,7 +65,7 @@ public class Ch18Lab1 extends JFrame {
 
 	private JMenuItem setForegroundMenu;
 
-	public Ch18Lab1() {
+	public SwingFiles() {
 		createMenu();
 		createPanel();
 		// Use BorderLayout for the frame

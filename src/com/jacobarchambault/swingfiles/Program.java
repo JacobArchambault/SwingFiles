@@ -1,11 +1,11 @@
-package com.jacobarchambault.chapter18lab1;
+package com.jacobarchambault.swingfiles;
 
 import javax.swing.WindowConstants;
 
 public class Program {
 	public static void main(
 			String[] args) {
-		Ch18Lab1 frame = new Ch18Lab1();
+		SwingFiles frame = new SwingFiles();
 		frame.setSize(
 				400,
 				300);

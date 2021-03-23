@@ -10,7 +10,7 @@ public class Program {
 				400,
 				300);
 		frame.setTitle(
-				"Chapter 18 Lab1");
+				"Opena  file");
 		frame.setDefaultCloseOperation(
 				WindowConstants.EXIT_ON_CLOSE);
 		frame.setLocationRelativeTo(
